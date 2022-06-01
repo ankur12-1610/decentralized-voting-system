@@ -3,10 +3,9 @@ The voting system based on Ehterium Network, this ensures that there is no centr
 > Link of Deployed Contract: https://rinkeby.etherscan.io/address/0x7b94C49cd9512E3fDda55ab9E7bA08B37Cbc8760
 
 ### Snapshots of how the voting system works
+![Screenshot from 2022-06-01 23-00-34](https://user-images.githubusercontent.com/76884959/171466827-c3fe6a08-f330-4552-9618-e2baa1fb2e72.png)
+![Screenshot from 2022-06-01 23-00-51](https://user-images.githubusercontent.com/76884959/171466851-c4158eee-3302-4a60-a62d-67fd7c791773.png)
 
-![Screenshot from 2022-06-01 22-08-07](https://user-images.githubusercontent.com/76884959/171465119-e5b59e37-1737-4638-9942-9cb6f6124e03.png)
-
-![Screenshot from 2022-06-01 22-19-08](https://user-images.githubusercontent.com/76884959/171465212-b571fd11-918e-471f-8b45-49e5dd2a1aa5.png)
 
 ### Follow the steps below to download, install, and run this project.
 
@@ -35,4 +34,6 @@ You must migrate the election smart contract each time your restart ganache.
 `$ npm run dev`
 Visit this URL in your browser: http://localhost:3000
 
-If you find this project useful, give a star on Github:
+---
+
+#### If you find this project useful, give **star** ⭐ this will motivate me to make more and more dApps.
