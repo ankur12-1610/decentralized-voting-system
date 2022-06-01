@@ -100,7 +100,7 @@
   "sourceMap": "34:1190:0:-;;;476:101;8:9:-1;5:2;;;30:1;27;20:12;5:2;476:101:0;508:26;;;;;;;;;;;;;;;;;;;:12;;;:26;;;:::i;:::-;544;;;;;;;;;;;;;;;;;;;:12;;;:26;;;:::i;:::-;34:1190;;583:155;637:15;;:18;;;;;;;;;;;;;695:36;;;;;;;;;705:15;;695:36;;;;722:5;695:36;;;;729:1;695:36;;;665:10;:27;676:15;;665:27;;;;;;;;;;;:66;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;583:155;:::o;34:1190::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
   "deployedSourceMap": "34:1190:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;745:477;;8:9:-1;5:2;;;30:1;27;20:12;5:2;745:477:0;;;;;;;;;;;;;;;;;;;;;;;;;;358:27;;8:9:-1;5:2;;;30:1;27;20:12;5:2;358:27:0;;;;;;;;;;;;;;;;;;;;;;;283:44;;8:9:-1;5:2;;;30:1;27;20:12;5:2;283:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;283:44:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;201:38;;8:9:-1;5:2;;;30:1;27;20:12;5:2;201:38:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;745:477;855:6;:18;862:10;855:18;;;;;;;;;;;;;;;;;;;;;;;;;854:19;846:28;;;;;;;;945:1;930:12;:16;:51;;;;;966:15;;950:12;:31;;930:51;922:60;;;;;;;;1053:4;1032:6;:18;1039:10;1032:18;;;;;;;;;;;;;;;;:25;;;;;;;;;;;;;;;;;;1107:10;:24;1118:12;1107:24;;;;;;;;;;;:34;;;:37;;;;;;;;;;;;;1202:12;1191:24;;;;;;;;;;745:477;:::o;358:27::-;;;;:::o;283:44::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;201:38::-;;;;;;;;;;;;;;;;;;;;;;:::o",
   "source": "pragma solidity >=0.4.22 <0.8.0;\n\ncontract Election {\n// Model a candidate\n    struct Candidate {\n        uint id;\n        string name;\n        uint voteCount;\n    }\n\n// Store accounts that have voted\nmapping(address => bool) public voters;\n// Store candidate\n// fetch candidate\n    mapping(uint => Candidate) public candidates;\n// store candidate count\n    uint public candidatesCount;\n\n    // voted event\n    event votedEvent (\n        uint indexed _candidateId\n    );\n\n    constructor () public {\n        addCandidate('Candidate1');\n        addCandidate('Candidate2');\n    }\n\n    function addCandidate(string _name) private {\n        candidatesCount ++;\n        candidates[candidatesCount] = Candidate(candidatesCount, _name, 0);\n    }\n\n\n    function vote (uint _candidateId) public {\n        // require that they haven't voted before\n        require(!voters[msg.sender]);\n\n        // require a valid candidate\n        require(_candidateId > 0 && _candidateId <= candidatesCount);\n\n        // record that voter has voted\n        voters[msg.sender] = true;\n\n        // update candidate vote Count\n        candidates[_candidateId].voteCount ++;\n\n        // trigger voted event\n        emit votedEvent(_candidateId);\n    }\n}",
-  "sourcePath": "/home/ankur12/Desktop/dev/decentralized-voting-system/contracts/Election.sol",
+  "sourcePath": "/home/ankur12/Desktop/decentralized-voting-system/contracts/Election.sol",
   "ast": {
     "absolutePath": "project:/contracts/Election.sol",
     "exportedSymbols": {
@@ -2722,18 +2722,19 @@
     "4": {
       "events": {},
       "links": {},
-      "address": "0x15094F7DD2303c60b87668B08A63611738831C75",
-      "transactionHash": "0xfc90cd96d12abc81a95b4db919820bd7ad73b9c6a1004d6a550419d8f688064f"
+      "address": "0x7b94C49cd9512E3fDda55ab9E7bA08B37Cbc8760",
+      "transactionHash": "0x778b97f19e22bff0562fdd119305c22b893f8ebbfc8b6ace4ebcbed29a21a8bd"
     },
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x1368Ed6998A6dcd10c677e3659E22533f9Aa69b2",
-      "transactionHash": "0xffecf0c48fb4f01c1551a7b9e9057edd508a875c16a99073aabb7ae3d9191844"
+      "address": "0x84990fd890d3a12C98CEF39D6240B34377BD34EF",
+      "transactionHash": "0xb48c55eccf261f97a54590a417f5844ea6683930e38b0a09be5c601dfdc27375"
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-06-01T10:15:46.657Z",
+  "updatedAt": "2022-06-01T17:11:19.587Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

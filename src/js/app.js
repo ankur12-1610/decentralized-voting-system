@@ -57,15 +57,18 @@ App = {
     var electionInstance;
     var loader = $("#loader");
     var content = $("#content");
+    var thanksvote = $("#thanksvote");
 
     loader.show();
     content.hide();
+    thanksvote.hide();
 
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
       if (err === null) {
         App.account = account;
-        $("#accountAddress").html("Your Account: " + account);
+        $("#thanksvote").html("Thank you " + account.bold() + " for voting!");
+        $("#accountAddress").html("User: " + account.bold());
       }
     });
 
@@ -87,12 +90,7 @@ App = {
           var voteCount = candidate[2];
 
           // Render candidate Result
-          if(id[i]==id[i+1]){
           var candidateTemplate = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + voteCount + "</td></tr>"
-          }
-          else {
-          var candidateTemplate = voteCount;
-          }
           candidatesResults.append(candidateTemplate);
           // Render candidate ballot option
           var candidateOption = "<option value='" + id + "' >" + name + "</ option>"
@@ -104,6 +102,8 @@ App = {
       // Do not allow a user to vote
       if(hasVoted) {
         $('form').hide();
+        thanksvote.show();
+        $('#accountAddress').hide();
       }
       loader.hide();
       content.show();
@@ -120,6 +120,8 @@ App = {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
+      $("#thanksvote").html("Thank you " + account.bold() + " for voting!");
+
     }).catch(function(err) {
       console.error(err);
     });
