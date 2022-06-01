@@ -55,6 +55,8 @@ App = {
 
   render: function() {
     var electionInstance;
+    var beforevote = $("#beforevote");
+    var aftervote = $("#aftervote");
     var loader = $("#loader");
     var content = $("#content");
     var thanksvote = $("#thanksvote");
@@ -62,6 +64,7 @@ App = {
     loader.show();
     content.hide();
     thanksvote.hide();
+    aftervote.hide();
 
     // Load account data
     web3.eth.getCoinbase(function(err, account) {
@@ -104,6 +107,8 @@ App = {
         $('form').hide();
         thanksvote.show();
         $('#accountAddress').hide();
+        aftervote.show();
+        beforevote.hide();
       }
       loader.hide();
       content.show();
@@ -120,7 +125,6 @@ App = {
       // Wait for votes to update
       $("#content").hide();
       $("#loader").show();
-      $("#thanksvote").html("Thank you " + account.bold() + " for voting!");
 
     }).catch(function(err) {
       console.error(err);

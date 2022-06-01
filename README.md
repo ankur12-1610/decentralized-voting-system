@@ -29,7 +29,6 @@ You must migrate the election smart contract each time your restart ganache.
 ```
 `$ truffle migrate --network rinkeby`
 
-
 ## Step 6. Run the Front End Application
 `$ npm run dev`
 Visit this URL in your browser: http://localhost:3000
