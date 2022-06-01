@@ -10,7 +10,9 @@ The voting system based on Ehterium Network, this ensures that there is no centr
 ### Follow the steps below to download, install, and run this project.
 
 #### Step 1. Clone the project
-`git clone https://github.com/ankur12-1610/decentralized-voting-system.git`
+```
+git clone https://github.com/ankur12-1610/decentralized-voting-system.git
+```
 
 ### Step 2. Install dependencies
 ```
@@ -20,17 +22,23 @@ $ npm install
 ### Step 3. Start Ganache
 Open the Ganache GUI client that you downloaded and installed. This will start your local blockchain instance.
 
-### Step 4. Compile & Deploy Election Smart Contract to local blockchain
+### Step 4. Compile & Deploy Election Smart Contract to local blockchain network
 ```
 $ truffle migrate --reset
 You must migrate the election smart contract each time your restart ganache.
 ```
-### Step 5. Compile & Deploy Election Smart Contract to Rinkeby blockchain
+### Step 5. Compile & Deploy Election Smart Contract to Rinkeby and other networks
 ```
 $ truffle migrate --network rinkeby
 
+#For other networks
+$ truffle migrate --network <network-name>
+```
+
 ## Step 6. Run the Front End Application
-`$ npm run dev`
+```
+$ npm run dev
+```
 Visit this URL in your browser: http://localhost:3000
 
 ---
