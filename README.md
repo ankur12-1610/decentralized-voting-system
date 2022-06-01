@@ -4,6 +4,10 @@ The voting system based on Ehterium Network, this ensures that there is no centr
 
 ### Snapshots of how the voting system works
 
+![Screenshot from 2022-06-01 22-08-07](https://user-images.githubusercontent.com/76884959/171465119-e5b59e37-1737-4638-9942-9cb6f6124e03.png)
+
+![Screenshot from 2022-06-01 22-19-08](https://user-images.githubusercontent.com/76884959/171465212-b571fd11-918e-471f-8b45-49e5dd2a1aa5.png)
+
 ### Follow the steps below to download, install, and run this project.
 
 #### Step 1. Clone the project
