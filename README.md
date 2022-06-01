@@ -1,5 +1,5 @@
 ## Decentralized Voting System
-The voting system based on Ehterium Network, this ensures that there is no central authority that can control the voting process.
+The voting system based on Ethereum Network, this ensures that there is no central authority that can control the voting process.
 > Link of Deployed Contract: https://rinkeby.etherscan.io/address/0x7b94C49cd9512E3fDda55ab9E7bA08B37Cbc8760
 
 ### Snapshots of how the voting system works
